@@ -1,0 +1,7 @@
+name: ServerCore
+version: 1.12.2.1
+description: Core plugin for brunoxkk0 servers.
+
+author: Brunoxkk0
+
+main: br.com.brunoxkk0.servercore.ServerCore
