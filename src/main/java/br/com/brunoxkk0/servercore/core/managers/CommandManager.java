@@ -196,7 +196,7 @@ public class CommandManager {
 
     public void build(Plugin plugin){
 
-        ServerCore.getLoggerHelper().info("[CommandHandler] » Starting command search..");
+        ServerCore.getLoggerHelper().info("[CommandHandler] » Starting command search.. for plugin " + plugin.getName());
 
 
         HashSet<Class<? extends CommandImplementable>> commandsClasses = scan(ClassUtils.getPackage(plugin.getClass()),  plugin.getClass().getClassLoader());
