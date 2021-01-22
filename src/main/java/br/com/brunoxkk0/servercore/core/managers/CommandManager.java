@@ -103,21 +103,22 @@ public class CommandManager {
 
     public static void processQueue(){
 
-        int init = COMMANDS_MAP.size();
+        int count = 0;
 
         for(Map.Entry<Command, CommandImplementable> entry : COMMANDS_REGISTER_QUEUE.entrySet()){
             if(!COMMANDS_MAP.containsKey(entry.getKey())){
                 PluginCommand pluginCommand = buildCommand(entry.getKey(), entry.getValue());
                 registerOnBukkit(pluginCommand);
                 COMMANDS_MAP.put(entry.getKey(), entry.getValue());
+
+                count++;
+
             }
         }
 
-        init = COMMANDS_MAP.size() - init;
-
         COMMANDS_REGISTER_QUEUE.clear();
 
-        ServerCore.getLoggerHelper().info("[CommandHandler] » Registered " + init + " commands from current queue. Total commands: " + COMMANDS_MAP.size());
+        ServerCore.getLoggerHelper().info("[CommandHandler] » Registered " + count + " commands from current queue. Total commands: " + COMMANDS_MAP.size());
     }
 
 

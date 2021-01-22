@@ -87,7 +87,7 @@ dependencies {
 
     compileOnly 'com.github.MilkBowl:VaultAPI:1.7'
 
-    compile fileTree(dir: 'craftbukkit', include: '*.jar')
+    compileOnly fileTree(dir: 'craftbukkit', include: '*.jar')
 
 }
 
